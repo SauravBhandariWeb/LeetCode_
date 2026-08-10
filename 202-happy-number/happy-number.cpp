@@ -5,7 +5,7 @@ public:
         unordered_set<int>seen;
 
         while (n != 1) {
-//  if same ele occur then avoid the loop then false;
+//  if same ele will occur then avoid the loop then false;
             if(seen.count(n))  return false;
             seen.insert(n);
 
