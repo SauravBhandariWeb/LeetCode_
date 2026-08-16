@@ -1,36 +1,26 @@
 class Solution {
 public:
-    void bfscheck(int src, vector<bool>& vis, vector<vector<int>>& isConnected) {
-        //
-        queue<int> q;
+    void dfscheck(int u, vector<bool>& vis, vector<vector<int>>& isConnected) {
 
-        vis[src] = true;
+        vis[u] = true;
 
-        q.push(src);
-
-        while (!q.empty()) {
-            // 0
-            int front = q.front();
-            // 0 remove from the queue array
-
-            q.pop();
-
-            for (int i = 0; i < vis.size(); i++) {
-                // 
-                if (isConnected[front][i] == 1 && !vis[i]) {
-                    vis[i] = true;
-                    q.push(i);
-                }
+        for (int i = 0; i < isConnected.size(); i++) {
+            if (!vis[i] && isConnected[u][i] == 1) {
+                dfscheck(i, vis, isConnected);
             }
         }
     }
-
     int findCircleNum(vector<vector<int>>& isConnected) {
-        int count = 0, size = isConnected.size();
+        int size = isConnected.size();
+        // false
         vector<bool> vis(size);
-        for (int i = 0; i < size; i++) {
+
+        int count = 0;
+
+        for (int i = 0; i < isConnected.size(); i++) {
+
             if (!vis[i]) {
-                bfscheck(i, vis, isConnected);
+                dfscheck(i, vis, isConnected);
                 count++;
             }
         }
