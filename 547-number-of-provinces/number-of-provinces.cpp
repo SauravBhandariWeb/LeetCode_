@@ -4,22 +4,24 @@ public:
 
         vis[u] = true;
 
-        for (int i = 0; i < isConnected.size(); i++) {
-            if (!vis[i] && isConnected[u][i] == 1) {
+        for (int i=0;i<isConnected[u].size();i++) {
+            int check=isConnected[u][i];
+            if (!vis[i] && check == 1) {
                 dfscheck(i, vis, isConnected);
             }
         }
-    }
+    
+}
     int findCircleNum(vector<vector<int>>& isConnected) {
         int size = isConnected.size();
         // false
         vector<bool> vis(size);
 
         int count = 0;
-
+// 0>size
         for (int i = 0; i < isConnected.size(); i++) {
 
-            if (!vis[i]) {
+            if(!vis[i]) {
                 dfscheck(i, vis, isConnected);
                 count++;
             }
