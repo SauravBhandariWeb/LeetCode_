@@ -4,9 +4,9 @@ public:
         
         int count = 0;
 
-        for(int i = 1000; i <= n; i++) {
+        for(int i = 1000; i <= n; i++)
+        
         count++;
-        }
 
         return count;
     }
