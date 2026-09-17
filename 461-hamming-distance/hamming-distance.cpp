@@ -2,14 +2,13 @@ class Solution {
 public:
     string helperbts(int num) {
         string ans;
-        while (num>0) {
+        while (num > 0) {
             if (num % 2 == 0)
-                ans += '0';
+                ans.insert(ans.begin(),'0');
             else
-                ans += '1';
+                ans.insert(ans.begin(),'1');
             num /= 2;
         }
-        reverse(ans.begin(), ans.end());
         return ans;
     }
 
@@ -19,17 +18,18 @@ public:
         string str2 = helperbts(y);
 
         while (str1.size() > str2.size()) {
-            str2.insert(str2.begin(),'0');
+            str2.insert(str2.begin(), '0');
         }
 
-        while(str1.size() < str2.size()) {
-            str1.insert(str1.begin(),'0');
+        while (str1.size() < str2.size()) {
+            str1.insert(str1.begin(), '0');
         }
 
-        int i = 0,j=str1.size(),ans=0;
-        while (i<str1.size()) {
-        if(str1[i]!=str2[i]) ans++; 
-        i++;
+        int i = 0, j = str1.size(), ans = 0;
+        while (i < str1.size()) {
+            if (str1[i] != str2[i])
+                ans++;
+            i++;
         }
         return ans;
     }
