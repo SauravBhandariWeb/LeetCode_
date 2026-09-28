@@ -1,0 +1,1 @@
+<h2>check-if-two-chessboard-squares-have-the-same-color Notes</h2><hr>[ Time taken: 15m 46s ]
