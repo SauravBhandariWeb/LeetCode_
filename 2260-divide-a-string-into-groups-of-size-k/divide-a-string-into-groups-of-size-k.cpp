@@ -7,7 +7,6 @@ public:
             str.push_back(s.substr(i,k));
         }
         // fill with x 
-        if(!n%k) return str;
         n = str.size();
         for(int j=n-1;j>=0;j-=3){
         if(str[j].size()==k) break;
