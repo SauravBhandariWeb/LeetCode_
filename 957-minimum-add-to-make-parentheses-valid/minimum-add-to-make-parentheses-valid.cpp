@@ -12,6 +12,7 @@ public:
                     extra++;
             }
         }
-        return plus<int>()(open,extra);
+        // style
+        return open+extra;
     }
 };
