@@ -8,11 +8,9 @@ public:
             for (int j = 0; j < image[i].size(); j++) {
                 image[i][j] ^= 1;
             }
+        reverse(image[i].begin(),image[i].end());
         }
-        
-        for(int i=0;i<m;i++) {
-            reverse(image[i].begin(),image[i].end());
-        }
+
         
     return image;
     }
