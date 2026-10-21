@@ -11,7 +11,7 @@ public:
     vector<int> getNoZeroIntegers(int n) {
         for (int i = 1; i < n; i++) {
             for (int j = i; j < n; j++) {
-                if (i + j > n)  break;
+               
                 if (checkZero(to_string(j)) || checkZero(to_string(i))) {
                     continue;
                 }
