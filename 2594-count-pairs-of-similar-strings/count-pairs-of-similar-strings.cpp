@@ -1,15 +1,15 @@
 class Solution {
 public:
-    string helper(string& str) {
+    string helper(string str) {
         set<char> s(str.begin(), str.end());
-        str.clear();
+        string newstr;
         for (char c : s) {
-            str += c;
+            newstr += c;
         }
-        return str;
+        return newstr;
     }
     int similarPairs(vector<string>& words) {
-        
+
         for (int i = 0; i < words.size(); i++) {
             words[i] = helper(words[i]);
         }
