@@ -5,7 +5,6 @@ public:
         char largechar = 'A';
         int largeNum = INT_MIN;
         int smallNum = INT_MAX;
-        int i = 0;
         for (char c : s) {
             if (isdigit(c)) {
                 largeNum = max(c - '0', largeNum);
