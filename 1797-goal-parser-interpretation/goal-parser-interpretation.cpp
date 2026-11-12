@@ -14,10 +14,8 @@ public:
                 close = 0;
             } else if (close != 0 && c == ')') {
                 ans += "al"; // a l
-                close = 0;
-            } else if (c != ')' || c != '(') {
+            } else  {
                 ans += c;
-                close = 0;
             }
         }
         string newstr = "";
@@ -25,7 +23,7 @@ public:
             if (c != ')')
                 newstr += c;
         }
-        
+
         return newstr;
     }
 };
