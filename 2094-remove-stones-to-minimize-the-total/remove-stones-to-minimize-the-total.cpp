@@ -6,7 +6,7 @@ public:
         while(k) {
             int ele = p.top();
             p.pop();
-            int newele=ceil(ele-ele/2);
+            int newele=floor(ele-ele/2);
             p.push(newele);
             k--;
         }
